@@ -31,3 +31,4 @@ jobs:
       working-directory: ${{ github.workspace }}/AspNetCoreTests
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      working-directory: ${{ github.workspace }}/AspNetCoreTests
