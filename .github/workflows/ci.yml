@@ -23,9 +23,9 @@ jobs:
     - name: Debug - Verify files
       run: ls -R
       working-directory: ${{ github.workspace }}
-    # - name: Restore dependencies
-    #   run: dotnet restore
-    #   working-directory: AspNetCoreTests/AspNetCoreTests/AspNetCoreTests.sln 
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: AspNetCoreTests/AspNetCoreTests/AspNetCoreTests.sln 
     - name: Build
       run: dotnet build AspNetCoreTests/AspNetCoreTests/AspNetCoreTests.sln --no-restore
     - name: Test
