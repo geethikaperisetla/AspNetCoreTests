@@ -24,9 +24,10 @@ jobs:
       run: ls -R
       working-directory: ${{ github.workspace }}
     - name: Restore dependencies
-      run: dotnet restore
-      working-directory: ${{ github.workspace }}/AspNetCoreTests/AspNetCoreTests/AspNetCoreTests.sln 
+      run: dotnet restore AspNetCoreTests.sln
+      working-directory: ${{ github.workspace }}/AspNetCoreTests
     - name: Build
-      run: dotnet build ${{ github.workspace }}/AspNetCoreTests/AspNetCoreTests/AspNetCoreTests.sln --no-restore
+      run: dotnet build AspNetCoreTests.sln --no-restore
+      working-directory: ${{ github.workspace }}/AspNetCoreTests
     - name: Test
       run: dotnet test --no-build --verbosity normal
